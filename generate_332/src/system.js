@@ -616,6 +616,7 @@
         var loader = this;
         lastAutoImportTimeout = setTimeout(function () {
           autoImportCandidates["http:" + lastScript.attributes.name.value] = [deps, declare];
+          autoImportCandidates["https:" + lastScript.attributes.name.value] = [deps, declare];
           autoImportCandidates["file:" + lastScript.attributes.name.value] = [deps, declare];
           loader.import(lastScript.attributes.name.value);
         });

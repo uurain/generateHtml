@@ -1,6 +1,6 @@
 # generate 单个Html用于制作playable广告 cocos creator 3.3.2 
 生成后的文件可以直接预览，
-https://uurain.github.io/generateHtml/index.html
+https://uurain.github.io/generateHtml/index
 
 支持png jpg plist animation plist 模型 声音的demo
 

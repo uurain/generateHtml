@@ -1,0 +1,102 @@
+{
+  "ver": "1.0.21",
+  "importer": "image",
+  "imported": true,
+  "uuid": "858ea6b5-ed9f-468f-9e26-bdd71a82390b",
+  "files": [
+    ".png",
+    ".json"
+  ],
+  "subMetas": {
+    "金币粒子_009": {
+      "ver": "1.0.4",
+      "uuid": "f8572238-18ae-4d89-9b89-5767f4da8447",
+      "rawTextureUuid": "858ea6b5-ed9f-468f-9e26-bdd71a82390b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 24.5,
+      "offsetY": -8,
+      "trimX": 97,
+      "trimY": 77,
+      "width": 80,
+      "height": 87,
+      "rawWidth": 225,
+      "rawHeight": 225,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {},
+      "importer": "*",
+      "imported": false,
+      "files": [],
+      "userData": {},
+      "displayName": "",
+      "id": "",
+      "name": ""
+    },
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "858ea6b5-ed9f-468f-9e26-bdd71a82390b@6c48a",
+      "displayName": "金币粒子_009",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "clamp-to-edge",
+        "wrapModeT": "clamp-to-edge",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "858ea6b5-ed9f-468f-9e26-bdd71a82390b"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f9941": {
+      "importer": "sprite-frame",
+      "uuid": "858ea6b5-ed9f-468f-9e26-bdd71a82390b@f9941",
+      "displayName": "金币粒子_009",
+      "id": "f9941",
+      "name": "spriteFrame",
+      "userData": {
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": 24.5,
+        "offsetY": -8,
+        "trimX": 97,
+        "trimY": 77,
+        "width": 80,
+        "height": 87,
+        "rawWidth": 225,
+        "rawHeight": 225,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
+        "packable": true,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "858ea6b5-ed9f-468f-9e26-bdd71a82390b@6c48a",
+        "atlasUuid": ""
+      },
+      "ver": "1.0.9",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "hasAlpha": true,
+    "type": "sprite-frame",
+    "redirect": "858ea6b5-ed9f-468f-9e26-bdd71a82390b@f9941"
+  }
+}

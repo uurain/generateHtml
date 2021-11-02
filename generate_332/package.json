@@ -1,0 +1,24 @@
+{
+  "name": "creator_pack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/clean-css": "^4.2.1",
+    "@types/node": "^12.7.8",
+    "@types/uglify-js": "^3.0.4",
+    "clean-css": "^4.2.1",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.3",
+    "uglify-js": "^3.6.0"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "compressing": "^1.5.1",
+    "jszip": "^3.6.0"
+  }
+}

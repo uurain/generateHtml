@@ -675,6 +675,7 @@
         // so this re-import has no consequence
         var loader = this;
         lastAutoImportTimeout = setTimeout(function () {
+          autoImportCandidates["http:" + lastScript.attributes.name.value] = [deps, declare];
           autoImportCandidates["file:" + lastScript.attributes.name.value] = [deps, declare];
           loader.import(lastScript.attributes.name.value);
         });

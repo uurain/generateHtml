@@ -1,7 +1,0 @@
-{
-	"name":"playable",
-	"version":"0.0.1",
-	"config": {
-		"playable_orientation": 0
-	}
-}

@@ -31,10 +31,6 @@ System.register([], function (_export, _context) {
         return initializeGame(cc, settings, findCanvas).then(function () {
           if (!settings.renderPipeline) return cc.game.run();
         }).then(function () {
-          if (settings.scriptPackages) {
-            return loadModulePacks(settings.scriptPackages);
-          }
-        }).then(function () {
           return loadJsList(settings.jsList);
         }).then(function () {
           return loadAssetBundle(settings.hasResourcesBundle, settings.hasStartSceneBundle);

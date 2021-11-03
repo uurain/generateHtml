@@ -174,7 +174,7 @@ function do_task(argProjectPath, argChannel, argTargetPath, urlType, qianzhui) {
     console.log("写入所有js到html")
     
     let jsArry = [C.OUTPUT_PATH + "/res.js", C.BASE_PATH + "/src/polyfills.bundle.js", "src/system.js", "src/named-register.js"
-    , C.BASE_PATH+"/cocos-js/cc.js", C.BASE_PATH+"/settings.js", C.BASE_PATH+"/application.js", C.BASE_PATH+"/index.js"]
+    , C.BASE_PATH+"/cocos-js/cc.js", C.BASE_PATH+"/settings.js", C.BASE_PATH+"/src/chunks/bundle.js", C.BASE_PATH+"/application.js", C.BASE_PATH+"/index.js"]
     for (let i = 0; i < jsArry.length; i++) {
         let v = jsArry[i];
         console.time(`---${path.basename(v)}`)

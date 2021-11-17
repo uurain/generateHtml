@@ -1,4 +1,4 @@
-System.register([], function (_export, _context) {
+System.register("application", [], function (_export, _context) {
   "use strict";
 
   function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -38,7 +38,8 @@ System.register([], function (_export, _context) {
           if (settings.renderPipeline) return cc.game.run();
         }).then(function () {
           cc.game.onStart = onGameStarted.bind(null, cc, settings);
-          onGameStarted(cc, settings);
+          // onGameStarted(cc, settings);
+          window.starGame()
         });
       });
     }
@@ -340,7 +341,9 @@ System.register([], function (_export, _context) {
     return options;
   }
 
+  console.log("createApplication====")
   window.createApplication = createApplication
+  window.onGameStarted = onGameStarted
 
   _export("createApplication", createApplication);
 

@@ -85,9 +85,8 @@ function get_html_code_by_js_file(js_filepath) {
     return `<script type="text/javascript"  name = "//${js_filepath}">${js}</script>`
 }
 
-function get_html_code_by_js_file_content(js_filepath) {
-    let js = get_file_content(js_filepath)
-    return `<script type="text/javascript">${js}</script>`
+function get_html_code_by_js_file_content(jsContent) {
+    return `<script type="text/javascript">${jsContent}</script>`
 }
 
 /** 将css文件转化为html文件内容(包括压缩过程) */
@@ -181,6 +180,22 @@ function do_task(argProjectPath, argChannel, argTargetPath, urlType, qianzhui) {
         html = html.replace("</body>", () => `${get_html_code_by_js_file(v)}\n</body>`)
         console.timeEnd(`---${path.basename(v)}`)
     }
+
+    // let indexJs = get_html_code_by_js_file_content("window.indexStr=\""+get_file_content(C.BASE_PATH+"/index.js")+"\"")
+    // html = html.replace("</body>", () => `${indexJs}\n</body>`)
+    // html = html.replace("</body>", () => `window.createIndexJs=function(){var d=document,s=document.createElement("script");s.type="text/javascript";s.text=window.indexStr;d.body.appendChild(s)};\n</body>`)
+
+    // 写入ironSource文件
+    if(C.CHANNEL == "ironSource"){
+        html = html.replace("</body>", () => `${get_html_code_by_js_file("src/channel/ironSource_func.js")}\n</body>`)
+        html = html.replace("</body>", () => `${get_html_code_by_js_file("src/channel/ironSource.js")}\n</body>`)
+        let headContent = '<script>\nfunction getScript(e,i){var n=document.createElement("script");n.type="text/javascript",n.async=!0,i&&(n.onload=i),n.src=e,document.head.appendChild(n)}function parseMessage(e){var i=e.data,n=i.indexOf(DOLLAR_PREFIX+RECEIVE_MSG_PREFIX);if(-1!==n){var t=i.slice(n+2);return getMessageParams(t)}return{}}function getMessageParams(e){var i,n=[],t=e.split("/"),a=t.length;if(-1===e.indexOf(RECEIVE_MSG_PREFIX)){if(a>=2&&a%2===0)for(i=0;a>i;i+=2)n[t[i]]=t.length<i+1?null:decodeURIComponent(t[i+1])}else{var o=e.split(RECEIVE_MSG_PREFIX);void 0!==o[1]&&(n=JSON&&JSON.parse(o[1]))}return n}function getDapi(e){var i=parseMessage(e);if(!i||i.name===GET_DAPI_URL_MSG_NAME){var n=i.data;getScript(n,onDapiReceived)}}function invokeDapiListeners(){for(var e in dapiEventsPool)dapiEventsPool.hasOwnProperty(e)&&dapi.addEventListener(e,dapiEventsPool[e])}function onDapiReceived(){dapi=window.dapi,window.removeEventListener("message",getDapi),invokeDapiListeners()}function init(){window.dapi.isDemoDapi&&(window.parent.postMessage(DOLLAR_PREFIX+SEND_MSG_PREFIX+JSON.stringify({state:"getDapiUrl"}),"*"),window.addEventListener("message",getDapi,!1))}var DOLLAR_PREFIX="$$$$",RECEIVE_MSG_PREFIX="DAPI_SERVICE:",SEND_MSG_PREFIX="DAPI_AD:",GET_DAPI_URL_MSG_NAME="connection.getDapiUrl",dapiEventsPool={},dapi=window.dapi||{isReady:function(){return!1},addEventListener:function(e,i){dapiEventsPool[e]=i},removeEventListener:function(e){delete dapiEventsPool[e]},isDemoDapi:!0};init();\n</script>'    
+        html = html.replace("</head>", () => `${headContent}\n</head>`)
+    }else{
+        html = html.replace("</body>", () => `${get_html_code_by_js_file("src/channel/test.js")}\n</body>`)
+    }
+
+
 
 
     let htmName = C.OUTPUT_INDEX_HTML
